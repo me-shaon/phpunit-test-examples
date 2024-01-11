@@ -24,4 +24,22 @@ class CalculatorTest extends TestCase
 
         $this->assertEquals(-31, $sum);
     }
+
+    public function testAverageMethod()
+    {
+        $calculator = new Calculator();
+
+        $average = $calculator->average([1, 2, 3]);
+
+        $this->assertEquals(2, $average);
+    }
+
+    public function testAverageMethodWithEmptyList()
+    {
+        $calculator = new Calculator();
+
+        $average = $calculator->average([]);
+
+        $this->assertEquals(0, $average);
+    }
 }
