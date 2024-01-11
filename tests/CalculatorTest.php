@@ -7,38 +7,37 @@ use PHPUnit\Framework\TestCase;
 
 class CalculatorTest extends TestCase
 {
+    private Calculator $calculator;
+
+    public function setUp(): void
+    {
+        $this->calculator = new Calculator();
+    }
+
     public function testSumMethod()
     {
-        $calculator = new Calculator();
-
-        $sum = $calculator->sum(1, 2);
+        $sum = $this->calculator->sum(1, 2);
 
         $this->assertEquals(3, $sum);
     }
 
     public function testSumMethodWithNegativeNumbers()
     {
-        $calculator = new Calculator();
-
-        $sum = $calculator->sum(-11, -20);
+        $sum = $this->calculator->sum(-11, -20);
 
         $this->assertEquals(-31, $sum);
     }
 
     public function testAverageMethod()
     {
-        $calculator = new Calculator();
-
-        $average = $calculator->average([1, 2, 3]);
+        $average = $this->calculator->average([1, 2, 3]);
 
         $this->assertEquals(2, $average);
     }
 
     public function testAverageMethodWithEmptyList()
     {
-        $calculator = new Calculator();
-
-        $average = $calculator->average([]);
+        $average = $this->calculator->average([]);
 
         $this->assertEquals(0, $average);
     }
