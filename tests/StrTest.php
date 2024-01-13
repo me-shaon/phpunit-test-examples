@@ -11,11 +11,16 @@ class StrTest extends TestCase
     public static function provideTrimData(): array
     {
         return [
-            ["Hello world!", "Hello world!"],
-            ["Hello world!", " Hello world!     "],
-            ["Hello world", " Hello world!", [" ", "!"]],
-            ["", "        "],
-            ["", "AAAAAA", ["A"]],
+            "nothing to trim" =>
+                ["Hello world!", "Hello world!"],
+            "leading and trailing spaces are trimmed" =>
+                ["Hello world!", " Hello world!     "],
+            "other characters can be trimmed" =>
+                ["Hello world", " Hello world!", [" ", "!"]],
+            "trim to empty string if all are spaces" =>
+                ["", "        "],
+            "trim to empty string if there is nothing else left" =>
+                ["", "AAAAAA", ["A"]],
         ];
     }
 
