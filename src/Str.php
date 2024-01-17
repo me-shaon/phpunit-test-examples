@@ -4,6 +4,10 @@ namespace App;
 
 class Str
 {
+    // 'Hello!' => 'Hello'
+    // 'Hello!' => 'Hello'
+    // 'Hello world      ' => 'Hello world'
+    // '       ' => ''
     public function trim(string $str, array $chars=[' '])
     {
         $startIndex = 0;
